@@ -1,5 +1,7 @@
 Cookies x 3
 Milk x 3
 Ice cream x 4
-Chocolate x 2
 Tea x 5
+French fries x 2
+Cheese x 1
+
