@@ -1,0 +1,162 @@
+4. Во овој дел го клонирам репозиториумот на Git во локален директориум.
+C:\Users\User\Desktop>git clone https://github.com/enastojmenovska/SI_2022_lab1_206047.git lab1_206047
+Cloning into 'lab1_206047'...
+info: please complete authentication in your browser...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (9/9), done.
+5. Создавам нов commit во кој додавам 5 нови ставки.
+
+C:\Users\User\Desktop>cd lab1_206047
+
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit -m "Add 5 items to the shopping list"
+[master e5c7e78] Add 5 items to the shopping list
+ 1 file changed, 5 insertions(+)
+ create mode 100644 shopping_list.txt
+
+6. Додавам нов commit кој означува додавање на количина на веќе внесените ставки.
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit -m "Add quantities to the items."
+[master fdf27fe] Add quantities to the items.
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+7. Креирам 2 гранки на master.
+C:\Users\User\Desktop\lab1_206047>git checkout -b branch1
+Switched to a new branch 'branch1'
+
+C:\Users\User\Desktop\lab1_206047>git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+C:\Users\User\Desktop\lab1_206047>git checkout -b branch2
+Switched to a new branch 'branch2'
+
+9. Правам синхронизација на сите досегашни гранки.
+C:\Users\User\Desktop\lab1_206047>git push --set-upstream origin branch1
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 668 bytes | 222.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/enastojmenovska/SI_2022_lab1_206047/pull/new/branch1
+remote:
+To https://github.com/enastojmenovska/SI_2022_lab1_206047.git
+ * [new branch]      branch1 -> branch1
+branch 'branch1' set up to track 'origin/branch1'.
+
+C:\Users\User\Desktop\lab1_206047>git push --set-upstream origin branch2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/enastojmenovska/SI_2022_lab1_206047/pull/new/branch2
+remote:
+To https://github.com/enastojmenovska/SI_2022_lab1_206047.git
+ * [new branch]      branch2 -> branch2
+branch 'branch2' set up to track 'origin/branch2'.
+
+10. Се префрлам на branch1.
+C:\Users\User\Desktop\lab1_206047>git checkout branch1
+Switched to branch 'branch1'
+Your branch is up to date with 'origin/branch1'.
+
+11. Ја менувам количината на 5тата ставка и правам нов commit.
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit -m "Change quantity of item #5"
+[branch1 2feca05] Change quantity of item #5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+12. Се враќам на гранката master.
+C:\Users\User\Desktop\lab1_206047>git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+13. Сега менувам ставка на master.
+
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit -m "Change quantity of item #2"
+[master 176ae81] Change quantity of item #2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+14. Синхронизирам досега направени промени.
+C:\Users\User\Desktop\lab1_206047>git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 354 bytes | 177.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/enastojmenovska/SI_2022_lab1_206047.git
+   3893819..176ae81  master -> master
+
+C:\Users\User\Desktop\lab1_206047>git checkout branch1
+Switched to branch 'branch1'
+Your branch is ahead of 'origin/branch1' by 1 commit.
+  (use "git push" to publish your local commits)
+
+C:\Users\User\Desktop\lab1_206047>git push origin branch1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 334 bytes | 167.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/enastojmenovska/SI_2022_lab1_206047.git
+   fdf27fe..2feca05  branch1 -> branch1
+
+15. Се префрлам на гранката branch2.
+C:\Users\User\Desktop\lab1_206047>git checkout branch2
+Switched to branch 'branch2'
+Your branch is up to date with 'origin/branch2'.
+
+16. Менувам име на ставка.
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit -m "Modify item #4"
+[branch2 0404b5e] Modify item #4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+18. Додавам нова стафка која е во склоп на последниот commit(се модифицира само не се креира нов).
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit --amend -m "Modify item #4 and add item #6"
+[branch2 44f5bd8] Modify item #4 and add item #6
+ Date: Sun Apr 10 14:40:42 2022 +0200
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+20. Тука се префрлам на гранката master и ја спојувам гранката branch1 кон master.
+C:\Users\User\Desktop\lab1_206047>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+C:\Users\User\Desktop\lab1_206047>git merge branch1
+Auto-merging shopping_list.txt
+Merge made by the 'ort' strategy.
+ shopping_list.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+21. Сега ја спојувам branch2 со master. Преку повикување на командата ни се јавува конфликт и не можеме да споиме, затоа се оди
+во документацијата локално, се разрешува конфликтот локално и новата промена се комитира.
+
+C:\Users\User\Desktop\lab1_206047>git merge branch2
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+C:\Users\User\Desktop\lab1_206047>git add shopping_list.txt
+
+C:\Users\User\Desktop\lab1_206047>git commit -m "Merge branch2 to master."
+[master fb10293] Merge branch2 to master.
+
+
